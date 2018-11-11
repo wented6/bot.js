@@ -353,6 +353,15 @@ if (message.content.startsWith(adminprefix + 'ستريم')) {
 });
 
 
+const Discord = require("discord.js");
+const client = new Discord.Client();
+client.on('ready', () => {
+  client.user.setGame(`Universe server .
+`,'https://www.twitch.tv/By:A7MD');
+  console.log('لقد تعلمت أن هناك شيئا بنّاء يأتي من كل هزيمة');
+});
+
+
 
 
 
