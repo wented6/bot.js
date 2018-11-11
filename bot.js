@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "#";
+const prefix = "#";///غير الامر 
 /////////////////////////
 ////////////////////////
 
@@ -33,7 +33,7 @@ client.on('message', async msg =>{
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-    if(command === `ping`) {
+    if(command === `ping`) {///سرعة اتصال البوت
     let embed = new Discord.RichEmbed()
     .setColor(3447003)
     .setTitle("Pong!!")
@@ -55,7 +55,7 @@ client.on('message', async msg =>{
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-    if(command === `avatar`){
+    if(command === `ava`){///كيف تاخذ افتار واحد
 	if(msg.channel.type === 'dm') return msg.channel.send("Nope Nope!! u can't use avatar command in DMs (:")
         let mentions = msg.mentions.members.first()
         if(!mentions) {
@@ -311,43 +311,33 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
 
-client.on('ready',async () => {
-console.log("Starting..");
-let g = client.guilds.get("504685916023947264");
-let c = g.channels.get("510263364346314763");
-if(c.type === 'voice') {
-c.join();
-setInterval(() => {
-if(!g.me.voiceChannel) c.join();
-}, 1);
-} else {
-console.log("Failed To Join:\n The Channel Type isn't \"text\"");
-}
-});
+
+
+
 
 
 const adminprefix = "#";
-const devs = ['228139766573432832','286926707531841536'];
+const devs = ['286926707531841536','228139766573432832'];
 client.on('message', message => {
-  var argresult = message.content.split(`).slice(1).join(' ');
+  var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
 if (message.content.startsWith(adminprefix + 'بلاي')) {
   client.user.setGame(argresult);
-    message.channel.sendMessage(${argresult} تم تغيير بلاينق البوت إلى )
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
   if (message.content.startsWith(adminprefix + 'نيم')) {
 client.user.setUsername(argresult).then
-    message.channel.sendMessage(${argresult} : تم تغيير أسم البوت إلى`)
-return message.reply("لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . ");
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
   if (message.content.startsWith(adminprefix + 'افتار')) {
 client.user.setAvatar(argresult);
-  message.channel.sendMessage(`${argresult} : تم تغير صورة البوت);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
 if (message.content.startsWith(adminprefix + 'ستريم')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");//حقوق دايموند كودز
-    message.channel.sendMessage(تم تغيير تويتش البوت إلى  ${argresult}**`)//حقوق دايموند كودز
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)//حقوق دايموند كودز
 }
 });
 
@@ -356,13 +346,4 @@ if (message.content.startsWith(adminprefix + 'ستريم')) {
 
 
 
-
-
-
-
-
-
-
-
-
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);///لاتغير شي
