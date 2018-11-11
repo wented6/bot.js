@@ -328,38 +328,45 @@ console.log("Failed To Join:\n The Channel Type isn't \"text\"");
 
 
 const adminprefix = "#";
-const devs = ['228139766573432832','228139766573432832'];
+const devs = ['228139766573432832','286926707531841536'];
 client.on('message', message => {
-  var argresult = message.content.split(` `).slice(1).join(' ');
+  var argresult = message.content.split(`).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix + 'بلاي')) {
-  client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
-} else 
+
   if (message.content.startsWith(adminprefix + 'نيم')) {
 client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+    message.channel.sendMessage(${argresult} : تم تغيير أسم البوت إلى`)
+return message.reply("لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . ");
 } else
   if (message.content.startsWith(adminprefix + 'افتار')) {
 client.user.setAvatar(argresult);
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+  message.channel.sendMessage(`${argresult} : تم تغير صورة البوت);
       } else     
-if (message.content.startsWith(adminprefix + 'ستريم')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");//حقوق دايموند كودز
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)//حقوق دايموند كودز
 }
 });
 
 
-const Discord = require("discord.js");
-const client = new Discord.Client();
-client.on('ready', () => {
-  client.user.setGame(`Universe server .
-`,'https://www.twitch.tv/By:A7MD');
-  console.log('لقد تعلمت أن هناك شيئا بنّاء يأتي من كل هزيمة');
-});
+
+
+
+
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+      
+  if (message.content.startsWith('#' + 'بلاي')) {
+    client.user.setGame(argresult);
+      message.channel.sendMessage(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'ستريم')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/حب بلا حدود");
+      message.channel.sendMessage(`**✅   ${argresult}**`)
+  }
+
+
+
+
 
 
 
