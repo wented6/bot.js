@@ -95,8 +95,7 @@ client.on('message', async msg => {
     
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
-	const devs = ['273334684421718016' , '273334684421718016' , '273334684421718016'];
-
+	
 
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
@@ -107,6 +106,9 @@ client.on('message', async msg => {
         if (!voiceChannel) return msg.channel.send("I can't find you in any voice channel!");
         
         const permissions = voiceChannel.permissionsFor(msg.client.user);
+
+		
+      
         
         if (!permissions.has('CONNECT')) {
 
@@ -312,6 +314,13 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
+
+
+
+
+
+
+
 
 
 client.on('ready',async () => {
