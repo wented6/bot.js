@@ -21,7 +21,6 @@ const gif = require("gif-search");
 const client = new Discord.Client({disableEveryone: true});
 
 const prefix = "#";///غير الامر 
-const myID = ['228139766573432832'];
 /////////////////////////
 ////////////////////////
 
