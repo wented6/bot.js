@@ -20,8 +20,6 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const devs = ['273334684421718016' , '273334684421718016' , '273334684421718016'];
-
 const prefix = "#";///غير الامر 
 /////////////////////////
 ////////////////////////
@@ -97,6 +95,8 @@ client.on('message', async msg => {
     
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
+	const devs = ['273334684421718016' , '273334684421718016' , '273334684421718016'];
+
 
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
