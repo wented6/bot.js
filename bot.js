@@ -20,6 +20,8 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
+const devs = ['273334684421718016' , '273334684421718016' , '273334684421718016'];
+
 const prefix = "#";///غير الامر 
 /////////////////////////
 ////////////////////////
