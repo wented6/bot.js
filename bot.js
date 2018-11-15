@@ -313,15 +313,20 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
-}
 
 
-var allowed = ["228139766573432832","228139766573432832","228139766573432832",/*etc...*/]
+ar allowed = ["228139766573432832","228139766573432832","228139766573432832",/*etc...*/]
 
 client.on('message', message => {
 if(!allowed.includes(message.author.id)) return console.log(' :x:  ... لا يمكنك تشفيل البوت')
 // body
 })
+
+
+
+
+}
+
 
 
 
