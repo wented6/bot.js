@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 
-var allowedList = ['228139766573432832','286926707531841536' /*etc...*/]
 
 const Util = require('discord.js');
 
@@ -28,7 +27,6 @@ const prefix = "#";///غير الامر
 ////////////////////////
 
 client.on('message', async msg =>{
-	if(alloewedList(message) == false) return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
@@ -51,7 +49,6 @@ client.on('message', async msg =>{
 ////////////////////////
 //////////////////////
 client.on('message', async msg =>{
-	if(alloewedList(message) == false) return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
@@ -92,7 +89,6 @@ client.on('message', async msg =>{
 ////////////////////////
 //////////////////////
 client.on('message', async msg => { 
-	if(alloewedList(message) == false) return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
