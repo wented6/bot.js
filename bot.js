@@ -27,6 +27,7 @@ const prefix = "#";///غير الامر
 ////////////////////////
 
 client.on('message', async msg =>{
+	if(!message.author.id === '228139766573432832') return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
@@ -49,6 +50,7 @@ client.on('message', async msg =>{
 ////////////////////////
 //////////////////////
 client.on('message', async msg =>{
+	if(!message.author.id === '228139766573432832') return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
@@ -89,6 +91,7 @@ client.on('message', async msg =>{
 ////////////////////////
 //////////////////////
 client.on('message', async msg => { 
+	if(!message.author.id === '228139766573432832') return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
