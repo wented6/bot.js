@@ -103,8 +103,7 @@ client.on('message', async msg => {
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
         
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+if(!message.member.hasPermission('ADMINISTRATOR')) return;
         if (!voiceChannel) return msg.channel.send("I can't find you in any voice channel!");
         
         const permissions = voiceChannel.permissionsFor(msg.client.user);
@@ -184,8 +183,7 @@ if(!message.channel.guild) return message.channel.send('**هذا الأمر فق
         
 	} else if (command === `skip`) {
 
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+if(!message.member.hasPermission('ADMINISTRATOR')) return;
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
         if (!serverQueue) return msg.channel.send("There is no Queue to skip!!");
 
@@ -193,9 +191,7 @@ if(!message.channel.guild) return message.channel.send('**هذا الأمر فق
         return undefined;
         
 	} else if (command === `stop`) {
-
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+if(!message.member.hasPermission('ADMINISTRATOR')) return;
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
         if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
         
@@ -205,8 +201,7 @@ if(!message.channel.guild) return message.channel.send('**هذا الأمر فق
         
 	} else if (command === `vol`) {
 
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+if(!message.member.hasPermission('ADMINISTRATOR')) return;
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
 		if (!serverQueue) return msg.channel.send('You only can use this command while music is playing!');
         if (!args[1]) return msg.channel.send(`The bot volume is **${serverQueue.volume}**`);
@@ -218,8 +213,7 @@ if(!message.channel.guild) return message.channel.send('**هذا الأمر فق
 
 	} else if (command === `np`) {
 
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+if(!message.member.hasPermission('ADMINISTRATOR')) return;
 		if (!serverQueue) return msg.channel.send('There is no Queue!');
 		const embedNP = new Discord.RichEmbed()
 	    .setDescription(`Now playing **${serverQueue.songs[0].title}**`)
@@ -227,8 +221,7 @@ if(!message.channel.guild) return message.channel.send('**هذا الأمر فق
         
 	} else if (command === `queue`) {
 		
-if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
+if(!message.member.hasPermission('ADMINISTRATOR')) return;
 		if (!serverQueue) return msg.channel.send('There is no Queue!!');
 		let index = 0;
 //	//	//
@@ -323,7 +316,6 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
-
 
 
 
