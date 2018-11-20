@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
 
+const Discord = require('discord.js');
 
 const Util = require('discord.js');
 
@@ -21,13 +21,11 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-
 const prefix = "#";///غير الامر 
 /////////////////////////
 ////////////////////////
 
 client.on('message', async msg =>{
-	if(!message.author.id === '228139766573432832') return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
@@ -50,7 +48,6 @@ client.on('message', async msg =>{
 ////////////////////////
 //////////////////////
 client.on('message', async msg =>{
-	if(!message.author.id === '228139766573432832') return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
@@ -91,7 +88,6 @@ client.on('message', async msg =>{
 ////////////////////////
 //////////////////////
 client.on('message', async msg => { 
-	if(!message.author.id === '228139766573432832') return;
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     
@@ -100,7 +96,6 @@ client.on('message', async msg => {
     
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
-	
 
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
@@ -108,12 +103,11 @@ client.on('message', async msg => {
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
         
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
         if (!voiceChannel) return msg.channel.send("I can't find you in any voice channel!");
         
         const permissions = voiceChannel.permissionsFor(msg.client.user);
-
-		
-      
         
         if (!permissions.has('CONNECT')) {
 
@@ -190,6 +184,8 @@ client.on('message', async msg => {
         
 	} else if (command === `skip`) {
 
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
         if (!serverQueue) return msg.channel.send("There is no Queue to skip!!");
 
@@ -198,6 +194,8 @@ client.on('message', async msg => {
         
 	} else if (command === `stop`) {
 
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
         if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
         
@@ -207,6 +205,8 @@ client.on('message', async msg => {
         
 	} else if (command === `vol`) {
 
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
 		if (!serverQueue) return msg.channel.send('You only can use this command while music is playing!');
         if (!args[1]) return msg.channel.send(`The bot volume is **${serverQueue.volume}**`);
@@ -218,6 +218,8 @@ client.on('message', async msg => {
 
 	} else if (command === `np`) {
 
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 		if (!serverQueue) return msg.channel.send('There is no Queue!');
 		const embedNP = new Discord.RichEmbed()
 	    .setDescription(`Now playing **${serverQueue.songs[0].title}**`)
@@ -225,6 +227,8 @@ client.on('message', async msg => {
         
 	} else if (command === `queue`) {
 		
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 		if (!serverQueue) return msg.channel.send('There is no Queue!!');
 		let index = 0;
 //	//	//
@@ -318,7 +322,6 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
-
 }
 
 
