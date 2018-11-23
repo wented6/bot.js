@@ -14,7 +14,7 @@ const devs = ['228139766573432832','286926707531841536','354148327090290693'];
 // اذا تبي تضيف ناس  يستخدمون البوت  ضع  التالي
 //['269031102340005838','403644560364450785']
 
- const discord_token = process.env.BOT_TOKEN;
+ const discord_token = "NDM0NzgzOTgwNjAxMDgxODU2.DkM1XQ.iKUiIpu2wj11CQ0mBsCIyIfxLNU";
 hngel.login(discord_token);
 
 hngel.on('ready', function() {
@@ -69,7 +69,7 @@ hngel.on('message', function(message) {
     const args = message.content.split(' ').slice(1).join(' ');
 
     if (mess.startsWith(prefix + 'play')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         // if user is not insert the URL or song title
@@ -127,7 +127,7 @@ hngel.on('message', function(message) {
         }
     }
     else if (mess.startsWith(prefix + 'skip')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel)
          return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
@@ -139,7 +139,7 @@ hngel.on('message', function(message) {
         });
     }
     else if (message.content.startsWith(prefix + 'vol')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         // console.log(args)
@@ -149,7 +149,7 @@ hngel.on('message', function(message) {
         message.channel.sendMessage(`**__ ${dispatcher.volume*50}% مستوى الصوت __**`);
     }
     else if (mess.startsWith(prefix + 'pause')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.channel.send('`✔`').then(() => {
@@ -157,7 +157,7 @@ hngel.on('message', function(message) {
         });
     }
     else if (mess.startsWith(prefix + 'on')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
             message.channel.send('`✔`').then(() => {
@@ -165,7 +165,7 @@ hngel.on('message', function(message) {
         });
     }
     else if (mess.startsWith(prefix + 'stop')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.channel.send('`✔`');
@@ -173,13 +173,13 @@ hngel.on('message', function(message) {
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
     else if (mess.startsWith(prefix + 'come')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
     }
     else if (mess.startsWith(prefix + 'play')) {
-        if (!devs.includes(msg.author.id)) return;  
+        if (!devs.includes(message.author.id)) return;  
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
@@ -294,7 +294,7 @@ function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
  hngel.on('message', message => {
-     if (message.content === prefix +"uuuuuuuuuuuuuuuuuuuf") {
+     if (message.content === prefix +"music help") {
     const embed = new Discord.RichEmbed()
      .setColor("#9a21df")
      .addField(`**__أوامر البوت__**`,`
