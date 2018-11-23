@@ -8,7 +8,7 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = '!';         //by : mr hngrl
+const prefix = '#';         //by : mr hngrl
 const devs = ['228139766573432832','286926707531841536','354148327090290693'];
 //ايدي مستخدمين البوت  ملحوضه
 // اذا تبي تضيف ناس  يستخدمون البوت  ضع  التالي
